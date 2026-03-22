@@ -1,0 +1,19 @@
+{
+  "name": "BTS volvió",
+  "short_name": "BTS volvió",
+  "description": "Hub en español para entender el regreso de BTS en 2026.",
+  "lang": "es",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f6f1e8",
+  "theme_color": "#cc4b3c",
+  "icons": [
+    {
+      "src": "assets/icons/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title id="title">BTS volvió favicon</title>
+  <desc id="desc">A warm gradient square with the letters BV for BTS volvió.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#982f25" />
+      <stop offset="55%" stop-color="#cc4b3c" />
+      <stop offset="100%" stop-color="#d8a751" />
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="34" fill="url(#bg)" />
+  <path d="M32 25h64" stroke="rgba(255,246,237,.45)" stroke-width="2" />
+  <path d="M32 103h64" stroke="rgba(255,246,237,.45)" stroke-width="2" />
+  <text
+    x="64"
+    y="78"
+    text-anchor="middle"
+    font-family="Fraunces, Georgia, serif"
+    font-size="52"
+    font-weight="700"
+    fill="#fff6ed"
+    letter-spacing="1"
+  >
+    BV
+  </text>
+</svg>

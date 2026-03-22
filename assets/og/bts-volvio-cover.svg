@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">BTS volvió share card</title>
+  <desc id="desc">Editorial cover image for the BTS volvió Spanish-language comeback hub.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8efe2" />
+      <stop offset="40%" stop-color="#f3e4d7" />
+      <stop offset="100%" stop-color="#ecdcc9" />
+    </linearGradient>
+    <radialGradient id="sunA" cx="20%" cy="12%" r="55%">
+      <stop offset="0%" stop-color="rgba(204,75,60,.36)" />
+      <stop offset="100%" stop-color="rgba(204,75,60,0)" />
+    </radialGradient>
+    <radialGradient id="sunB" cx="85%" cy="18%" r="45%">
+      <stop offset="0%" stop-color="rgba(216,167,81,.34)" />
+      <stop offset="100%" stop-color="rgba(216,167,81,0)" />
+    </radialGradient>
+    <linearGradient id="mark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#982f25" />
+      <stop offset="58%" stop-color="#cc4b3c" />
+      <stop offset="100%" stop-color="#d8a751" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect width="1200" height="630" fill="url(#sunA)" />
+  <rect width="1200" height="630" fill="url(#sunB)" />
+  <g opacity=".26">
+    <path d="M0 145h1200M0 325h1200M0 505h1200" stroke="#5f5852" stroke-width="1" />
+    <path d="M150 0v630M380 0v630M610 0v630M840 0v630M1070 0v630" stroke="#5f5852" stroke-width="1" />
+  </g>
+  <g transform="translate(96 92)">
+    <rect width="92" height="92" rx="25" fill="url(#mark)" />
+    <text
+      x="46"
+      y="61"
+      text-anchor="middle"
+      font-family="Fraunces, Georgia, serif"
+      font-size="40"
+      font-weight="700"
+      fill="#fff6ed"
+    >
+      BV
+    </text>
+    <text
+      x="122"
+      y="34"
+      font-family="Manrope, Arial, sans-serif"
+      font-size="20"
+      font-weight="800"
+      fill="#982f25"
+      letter-spacing="3"
+    >
+      BTS EN 2026, EXPLICADO EN ESPAÑOL
+    </text>
+    <text
+      x="122"
+      y="126"
+      font-family="Fraunces, Georgia, serif"
+      font-size="80"
+      font-weight="700"
+      fill="#1e1b1a"
+    >
+      BTS volvió
+    </text>
+    <text
+      x="122"
+      y="188"
+      font-family="Manrope, Arial, sans-serif"
+      font-size="30"
+      font-weight="600"
+      fill="#3a3532"
+    >
+      Historia, arte, contexto y guía actual para México y LATAM.
+    </text>
+    <g transform="translate(0 278)">
+      <rect width="1008" height="188" rx="34" fill="rgba(255,250,246,.82)" stroke="rgba(255,255,255,.75)" />
+      <text x="40" y="66" font-family="Manrope, Arial, sans-serif" font-size="30" font-weight="800" fill="#1e1b1a">
+        Qué incluye
+      </text>
+      <text x="40" y="118" font-family="Manrope, Arial, sans-serif" font-size="25" fill="#5f5852">
+        ARIRANG, cronología, miembros, documental, tour 2026-2027 y rutas para volver a BTS.
+      </text>
+      <text x="40" y="156" font-family="Manrope, Arial, sans-serif" font-size="23" fill="#0f5d55">
+        Un hub editorial pensado para compartir y para buscar.
+      </text>
+    </g>
+  </g>
+</svg>
