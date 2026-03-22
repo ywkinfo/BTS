@@ -2,3 +2,4 @@ _site/
 _site_*/
 __pycache__/
 *.pyc
+.gstack/
