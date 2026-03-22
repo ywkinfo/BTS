@@ -54,10 +54,37 @@ jobs:
           echo "Using site URL: $site_url"
 
       - name: Build static Pages bundle
+        env:
+          SEARCH_CONSOLE_VERIFICATION: ${{ vars.SEARCH_CONSOLE_VERIFICATION }}
+          SEARCH_CONSOLE_VERIFICATION_SECRET: ${{ secrets.SEARCH_CONSOLE_VERIFICATION }}
+          GA4_MEASUREMENT_ID: ${{ vars.GA4_MEASUREMENT_ID }}
+          GA4_MEASUREMENT_ID_SECRET: ${{ secrets.GA4_MEASUREMENT_ID }}
         run: |
-          python tools/build_pages.py \
-            --site-url "${{ steps.site.outputs.site_url }}" \
+          search_console_verification="$SEARCH_CONSOLE_VERIFICATION"
+          ga4_measurement_id="$GA4_MEASUREMENT_ID"
+
+          if [ -z "$search_console_verification" ]; then
+            search_console_verification="$SEARCH_CONSOLE_VERIFICATION_SECRET"
+          fi
+
+          if [ -z "$ga4_measurement_id" ]; then
+            ga4_measurement_id="$GA4_MEASUREMENT_ID_SECRET"
+          fi
+
+          build_args=(
+            --site-url "${{ steps.site.outputs.site_url }}"
             --output-dir "_site"
+          )
+
+          if [ -n "$search_console_verification" ]; then
+            build_args+=(--search-console-verification "$search_console_verification")
+          fi
+
+          if [ -n "$ga4_measurement_id" ]; then
+            build_args+=(--ga4-measurement-id "$ga4_measurement_id")
+          fi
+
+          python tools/build_pages.py "${build_args[@]}"
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4

@@ -37,6 +37,7 @@ Then open [http://localhost:4173](http://localhost:4173).
 - If you deploy through the included GitHub Pages workflow, the placeholder domain `https://bts-volvio.example` is replaced automatically at build time.
 - If you deploy some other way, replace that placeholder production domain in canonical tags, `sitemap.xml`, `robots.txt`, and JSON-LD before going live.
 - Add your real analytics/Search Console setup after the production domain is connected.
+- Current public URL: `https://ywkinfo.github.io/BTS/`
 
 ## GitHub Pages
 
@@ -63,6 +64,36 @@ If you want to build the site for a custom domain, add a repository variable nam
 This will make the workflow build canonical tags and sitemap entries for that domain.
 You should still configure the custom domain in `Settings` > `Pages` on GitHub.
 
+### Search Console and GA4
+
+The build pipeline can inject Search Console verification and GA4 only into the generated output.
+
+Repository variables or secrets supported by the workflow:
+
+- `SEARCH_CONSOLE_VERIFICATION`
+- `GA4_MEASUREMENT_ID`
+
+Recommended values:
+
+- `SEARCH_CONSOLE_VERIFICATION`: only the token value from the `<meta name="google-site-verification" ...>` snippet
+- `GA4_MEASUREMENT_ID`: a GA4 stream ID like `G-XXXXXXXXXX`
+
+Recommended rollout:
+
+1. Create a Search Console property using the URL prefix `https://ywkinfo.github.io/BTS/`
+2. Choose HTML meta tag verification and copy only the token value
+3. Add that value as the repository variable or secret `SEARCH_CONSOLE_VERIFICATION`
+4. Create a GA4 web data stream for `https://ywkinfo.github.io/BTS/`
+5. Add the GA4 measurement ID as `GA4_MEASUREMENT_ID`
+6. Redeploy the Pages workflow
+7. Submit `https://ywkinfo.github.io/BTS/sitemap.xml` in Search Console
+
+Verification notes:
+
+- Search Console verification is injected into the homepage only
+- GA4 is injected into every HTML page, including article pages and `404.html`
+- If either value is missing, that integration stays disabled
+
 ### Local Pages-style build
 
 You can preview the built output with:
@@ -70,6 +101,19 @@ You can preview the built output with:
 ```bash
 cd /Users/peter/BTS
 python3 tools/build_pages.py --site-url https://example.com --output-dir _site
+cd _site
+python3 -m http.server 4173
+```
+
+To test Search Console and GA4 injection locally:
+
+```bash
+cd /Users/peter/BTS
+python3 tools/build_pages.py \
+  --site-url https://example.com \
+  --search-console-verification google123example \
+  --ga4-measurement-id G-TEST123456 \
+  --output-dir _site
 cd _site
 python3 -m http.server 4173
 ```
